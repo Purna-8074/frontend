@@ -4,6 +4,8 @@ import AdminHome from "./AdminHome";
 import AddStudent from "./AddStudent";
 import ViewAllStudents from "./ViewAllStudents";
 import "./admin.css";
+import AddFaculty from "./AddFaculty";
+import ViewAllFaculty from "./ViewAllFaculty";
 
 export default function AdminNavBar() {
   const navigate = useNavigate();
@@ -20,6 +22,8 @@ export default function AdminNavBar() {
         <Link to="/admin/home">Home</Link>
         <Link to="/admin/addstudent">Add Student</Link>
         <Link to="/admin/viewallstudents">View All Students</Link>
+        <Link to="/admin/addfaculty">Add Faculty</Link>
+        <Link to="/admin/viewallfaculty">View All Faculty</Link>
 
         <button onClick={adminLogout} className="logout-btn">
           Logout
@@ -30,6 +34,9 @@ export default function AdminNavBar() {
         <Route path="admin/home" element={<AdminHome />} />
         <Route path="admin/addstudent" element={<AddStudent />} />
         <Route path="admin/viewallstudents" element={<ViewAllStudents />} />
+         <Route path="admin/addFaculty" element={<AddFaculty />} />
+        <Route path="admin/viewallfaculty" element={<ViewAllFaculty />} />
+        
       </Routes>
     </div>
   );

@@ -10,9 +10,13 @@ export default function ViewAllStudents() {
   const fetchStudents = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:1235/adminapi/viewall",
+        "http://localhost:1235/adminapi/viewallstudents",
       );
-      setData(response.data);
+      if(response.status === 200) {
+        setData(response.data);
+      }else {
+        setError(response.data);
+      }
     } catch (err) {
       setError(err.message);
     }
