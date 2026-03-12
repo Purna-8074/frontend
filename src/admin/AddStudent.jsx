@@ -20,10 +20,11 @@ export default function AddStudent() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
+      
       const response = await axios.post(
-        "http://localhost:1235/adminapi/addStudent",
+        "http://localhost:1235/adminapi/addstudent",
         formdata,
       );
       if (response.status === 201) {
